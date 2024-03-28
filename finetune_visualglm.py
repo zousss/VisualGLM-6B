@@ -172,7 +172,7 @@ if __name__ == '__main__':
     known, args_list = py_parser.parse_known_args()
     args = get_args(args_list)
     args = argparse.Namespace(**vars(args), **vars(known))
-    args.device = 'cpu'
+    args.device = 'cuda'
 
     model_type = 'visualglm-6b'
     model, args = FineTuneVisualGLMModel.from_pretrained(model_type, args)
