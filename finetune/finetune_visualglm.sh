@@ -45,6 +45,7 @@ gpt_options=" \
        --lr 0.0001 \
        --batch-size 2 \
        --skip-init \
+       --fp16  False\
        --use_lora
 "
 
