@@ -51,7 +51,7 @@ gpt_options=" \
 
               
 
-run_cmd="${OPTIONS_NCCL} finetune_visualglm.py ${gpt_options}"
+run_cmd="${OPTIONS_NCCL} ${OPTIONS_SAT} deepspeed finetune_visualglm.py --deepspeed ./zero.json ${gpt_options}"
 echo ${run_cmd}
 eval ${run_cmd}
 
