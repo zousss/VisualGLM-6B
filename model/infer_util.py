@@ -14,7 +14,7 @@ from .visualglm import VisualGLMModel
 def get_infer_setting(gpu_device=0, quant=None):
     os.environ['CUDA_VISIBLE_DEVICES'] = str(gpu_device)
     args = argparse.Namespace(
-        fp16=False,
+        fp16=True,
         skip_init=True,
         device='cuda' if quant is None else 'cpu',
     )

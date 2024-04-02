@@ -45,13 +45,13 @@ gpt_options=" \
        --lr 0.0001 \
        --batch-size 2 \
        --skip-init \
-       --bf16 \
+       --fp16 \
        --use_lora
 "
 
               
 
-run_cmd="${OPTIONS_NCCL} ${OPTIONS_SAT} deepspeed --master_port 16666 --hostfile ${HOST_FILE_PATH} finetune_visualglm.py ${gpt_options}"
+run_cmd="${OPTIONS_NCCL} finetune_visualglm.py ${gpt_options}"
 echo ${run_cmd}
 eval ${run_cmd}
 
