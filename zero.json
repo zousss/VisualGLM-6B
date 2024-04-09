@@ -10,10 +10,10 @@
     "optimizer": {
         "type": "AdamW",
         "params": {
-            "lr": "auto",
-            "betas": "auto",
-            "eps": "auto",
-            "weight_decay": "auto"
+            "lr": 0.001,
+            "betas": [0.8, 0.999],
+            "eps": 1e-8,
+            "weight_decay": 3e-7
         }
     },
     "train_micro_batch_size_per_gpu": 1,
@@ -23,9 +23,6 @@
         "stage": 3,
         "overlap_comm": true,
         "contiguous_gradients": true,
-        "sub_group_size": 1e9,
-        "stage3_max_live_parameters": 1e9,
-        "stage3_max_reuse_distance": 1e9,
         "stage3_gather_16bit_weights_on_model_save": true
     }
 }
