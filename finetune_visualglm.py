@@ -16,7 +16,7 @@ class FineTuneVisualGLMModel(VisualGLMModel):
         if args.use_lora:
             self.add_mixin("lora", LoraMixin(args.num_layers, args.lora_rank, layer_range=args.layer_range), reinit=True)
             # self.get_mixin("eva").model.glm_proj = replace_linear_with_lora(self.get_mixin("eva").model.glm_proj, LoraLinear, args.lora_rank)
-        elif args.use_qlora and args.mode == 'inference':
+        elif args.use_qlora:
             self.add_mixin("lora", LoraMixin(args.num_layers, args.lora_rank, layer_range=args.layer_range, qlora=True), reinit=True)
         self.args = args
         
